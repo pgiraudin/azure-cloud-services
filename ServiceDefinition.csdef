@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceDefinition name="HelloCloudService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2014-06.2.4">
+  <WebRole name="WebRole1" vmsize="Small">
+    <Sites>
+      <Site name="Web">
+        <Bindings>
+          <Binding name="Endpoint1" endpointName="Endpoint1" />
+        </Bindings>
+      </Site>
+    </Sites>
+    <Endpoints>
+      <InputEndpoint name="Endpoint1" protocol="http" port="80" />
+    </Endpoints>
+    <Imports>
+      <Import moduleName="RemoteAccess" />
+      <Import moduleName="RemoteForwarder" />
+    </Imports>
+    <LocalResources>
+      <LocalStorage name="StartupLocalStorage" sizeInMB="100"/>
+    </LocalResources>
+    <Startup>
+      <Task commandLine="setupRuxit.cmd" executionContext="elevated" taskType="simple">
+        <Environment>
+          <Variable name="TENANT" value="trr29282" />
+          <Variable name="TOKEN" value="0hztofQ2qC2HSzuT" />
+          <Variable name="PathToStartupStorage">
+            <RoleInstanceValue xpath="/RoleEnvironment/CurrentInstance/LocalResources/LocalResource[@name='StartupLocalStorage']/@path" />
+          </Variable>
+        </Environment>
+      </Task>
+    </Startup>
+  </WebRole>
+</ServiceDefinition>
