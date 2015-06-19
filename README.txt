@@ -1,5 +1,5 @@
-Ruxit for AWS Elastic Beanstalk
-===============================
+Ruxit for Microsoft Azure Cloud-Services
+========================================
 
 Ruxit is a full-stack application monitoring solution that covers your entire application stack. Learn more on our website https://ruxit.com
 
