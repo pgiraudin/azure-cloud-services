@@ -10,8 +10,9 @@ Azure Cloud-Services gives you the option of deploying and auto scaling applicat
 You can use our predefined .csdef configuration file to modify the process of deployment by supplying additional resources. 
 
 First, please copy the <LocalResources> and <Startup> tags from the ServiceDefinition.csdef file to the one of the CloudService solution. We're providing the whole .csdef file here as it might help you in finding out where those tags exactly belong.
+You only need to adapt the key/value pairs for your RUXIT_TENANT and RUXIT_TOKEN.
 
-ruxit_tenant
+RUXIT_TENANT
 ------------
 Your ruxit tenant ID is the unique identifier of your ruxit environment. You can find it easily by looking at the URL in your browser when you are logged into your Ruxit home page.
 
@@ -19,7 +20,7 @@ https://{tenant}.live.ruxit.com
 
 The subdomain {tenant} represents your tenant id.
 
-ruxit_token
+RUXIT_TOKEN
 -----------
 The token for your ruxit tenant. You can get your token by following these steps
 
