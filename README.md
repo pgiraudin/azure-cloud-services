@@ -12,6 +12,8 @@ You can use our predefined .csdef configuration file to modify the process of de
 First, please copy the <LocalResources> and <Startup> tags from the ServiceDefinition.csdef file to the one of the CloudService solution. We're providing the whole .csdef file here as it might help you in finding out where those tags exactly belong.
 You only need to adapt the key/value pairs for your ENV_ID and ENV_TOKEN.
 
+You can also find a description on how to retrieve those parameters in our blog post on the Ruxit Azure VM Extension: https://blog.ruxit.com/azure-monitoring-with-ruxit/
+
 ENV_ID
 ------------
 Your ruxit Environment ID is the unique identifier of your ruxit environment. You can find it easily by looking at the URL in your browser when you are logged into your Ruxit home page.
