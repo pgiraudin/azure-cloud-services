@@ -10,26 +10,26 @@ Azure Cloud-Services gives you the option of deploying and auto scaling applicat
 You can use our predefined .csdef configuration file to modify the process of deployment by supplying additional resources. 
 
 First, please copy the <LocalResources> and <Startup> tags from the ServiceDefinition.csdef file to the one of the CloudService solution. We're providing the whole .csdef file here as it might help you in finding out where those tags exactly belong.
-You only need to adapt the key/value pairs for your RUXIT_TENANT and RUXIT_TOKEN.
+You only need to adapt the key/value pairs for your ENV_ID and ENV_TOKEN.
 
-RUXIT_TENANT
+ENV_ID
 ------------
-Your ruxit tenant ID is the unique identifier of your ruxit environment. You can find it easily by looking at the URL in your browser when you are logged into your Ruxit home page.
+Your ruxit Environment ID is the unique identifier of your ruxit environment. You can find it easily by looking at the URL in your browser when you are logged into your Ruxit home page.
 
-https://{tenant}.live.ruxit.com
+https://{ENV_ID}.live.ruxit.com
 
-The subdomain {tenant} represents your tenant id.
+The subdomain {ENV_ID} represents your Environment ID.
 
-RUXIT_TOKEN
+ENV_TOKEN
 -----------
-The token for your ruxit tenant. You can get your token by following these steps
+The token for your ruxit environment. You can get your token by following these steps
 
-go to your ruxit environment: https://{tenant}.live.ruxit.com
+go to your ruxit environment: https://{ENV_ID}.live.ruxit.com
 Click the burger menu in the right upper corner and select Monitor another host
 You will see the "Download Ruxit Agent" wizard; click Linux (even if you need Windows)
 You will see the wget command line. The token is the last part of the path after /latest/
 
-wget -O ruxit-Agent-Linux-1.XX.0.2015XXXX-XXXXXX.sh https://{tenant}.live.ruxit.com/installer/agent/unix/latest/{this-is-the-token}
+wget -O ruxit-Agent-Linux-1.XX.0.2015XXXX-XXXXXX.sh https://{ENV_ID}.live.ruxit.com/installer/agent/unix/latest/{ENV_TOKEN}
 
 Copy it and use it in your config
 
