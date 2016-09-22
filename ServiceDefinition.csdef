@@ -2,7 +2,7 @@
 <ServiceDefinition name="HelloCloudService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2014-06.2.4">
   <WebRole name="WebRole1" vmsize="Small">
     <ConfigurationSettings>
-      <Setting name="Dynatrace.TenantId" />
+      <Setting name="Dynatrace.EnvironmentId" />
       <Setting name="Dynatrace.Token" />
     </ConfigurationSettings>
     <Sites>
@@ -25,8 +25,8 @@
     <Startup>
       <Task commandLine="setupDynatrace.cmd" executionContext="elevated" taskType="simple">
         <Environment>
-          <Variable name="TENANT">
-            <RoleInstanceValue xpath="/RoleEnvironment/CurrentInstance/ConfigurationSettings/ConfigurationSetting[@name='Dynatrace.TenantId']/@value" />
+          <Variable name="ENVIRONMENTID">
+            <RoleInstanceValue xpath="/RoleEnvironment/CurrentInstance/ConfigurationSettings/ConfigurationSetting[@name='Dynatrace.EnvironmentId']/@value" />
           </Variable>
           <Variable name="TOKEN">
             <RoleInstanceValue xpath="/RoleEnvironment/CurrentInstance/ConfigurationSettings/ConfigurationSetting[@name='Dynatrace.Token']/@value" />
