@@ -1,13 +1,33 @@
 Dynatrace OneAgent for Microsoft Azure Cloud-Services
 ========================================
 
-Dynatrace is a full-stack application monitoring solution that covers your entire application stack. Learn more on our website http://www.dynatrace.com
+Dynatrace is a full-stack application monitoring solution that covers your entire application stack. Learn more on our website https://www.dynatrace.com/technologies/cloud-and-microservices/azure-monitoring/
 
 Monitoring Azure Cloud-Services
 -------------------------------
-
 Azure Cloud-Services gives you the option of deploying and auto scaling applications and services.
-You can use our predefined .csdef configuration file to modify the process of deployment by supplying additional resources. 
+By modifying the .csdef file of your Cloud Service, you can easily install the Dynatrace OneAgent as part of your deployment.
+
+First, please gather your Dynatrace credentials from the Dynatrace dashboard. This is required for allowing the Dynatrace OneAgent to connect to your Dynatrace environment.
+![Screenshot of EnvironmentID and Token]()
+
+Please make sure you have that information available later.
+
+Now, download the files install.ps1 and setupDynatrace.cmd from this repository to your projects. Those scripts make sure that the OneAgent is installed prior to startin up your services. The destination is different between Web Roles and Worker Roles.
+
+Web-Roles
+---------
+
+Worker-Roles
+------------
+
+![]()
+
+
+ServiceDefinition.csdef
+-----------------------
+
+
 
 First, please copy the <LocalResources> and <Startup> tags from the ServiceDefinition.csdef file to the one of the CloudService solution. We're providing the whole .csdef file here as it might help you in finding out where those tags exactly belong.
 You only need to adapt the key/value pairs for your ENV_ID and ENV_TOKEN.
