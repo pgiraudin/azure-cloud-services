@@ -2,8 +2,8 @@
 <ServiceDefinition name="HelloCloudService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2014-06.2.4">
   <WebRole name="WebRole1" vmsize="Small">
     <ConfigurationSettings>
-      <Setting name="Ruxit.TenantId" />
-      <Setting name="Ruxit.Token" />
+      <Setting name="Dynatrace.TenantId" />
+      <Setting name="Dynatrace.Token" />
     </ConfigurationSettings>
     <Sites>
       <Site name="Web">
@@ -23,13 +23,13 @@
       <LocalStorage name="StartupLocalStorage" sizeInMB="100"/>
     </LocalResources>
     <Startup>
-      <Task commandLine="setupRuxit.cmd" executionContext="elevated" taskType="simple">
+      <Task commandLine="setupDynatrace.cmd" executionContext="elevated" taskType="simple">
         <Environment>
           <Variable name="TENANT">
-            <RoleInstanceValue xpath="/RoleEnvironment/CurrentInstance/ConfigurationSettings/ConfigurationSetting[@name='Ruxit.TenantId']/@value" />
+            <RoleInstanceValue xpath="/RoleEnvironment/CurrentInstance/ConfigurationSettings/ConfigurationSetting[@name='Dynatrace.TenantId']/@value" />
           </Variable>
           <Variable name="TOKEN">
-            <RoleInstanceValue xpath="/RoleEnvironment/CurrentInstance/ConfigurationSettings/ConfigurationSetting[@name='Ruxit.Token']/@value" />
+            <RoleInstanceValue xpath="/RoleEnvironment/CurrentInstance/ConfigurationSettings/ConfigurationSetting[@name='Dynatrace.Token']/@value" />
           </Variable>
           <Variable name="StartupLocalStorage">
             <RoleInstanceValue xpath="/RoleEnvironment/CurrentInstance/LocalResources/LocalResource[@name='StartupLocalStorage']/@path" />
