@@ -67,7 +67,7 @@ The screenshot below the snippets shows how your `ServiceDefinition.csdef` file 
 </Startup>
 ```
 
-![Screenshot of ServiceDefinition.csdef](images/ServiceDefinition.png)
+![Screenshot of ServiceDefinition.csdef](images/ServiceDefinition.PNG)
 
 When you're using VisualStudio, you'll recognize a Warning in your Solution Explorer. This is because we defined two mandatory parameters for the Dynatrace OneAgent (EnvironmentID and Token), which still need to be applied to all your Cloud Service configuration files (*.cscfg).
 ![Screenshot of warning in Solution Explorer](images/Warning.png)
