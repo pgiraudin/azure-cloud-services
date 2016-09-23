@@ -33,8 +33,9 @@ For Worker Roles, the files have to be added to the Cloud Service project, not t
 ServiceDefinition.csdef
 -----------------------
 Now that we have placed the files Install.ps1 and setupDynatrace.cmd to the projects, we need to make sure that they get executed when deploying the solution to Azure Cloud Service.
-We need to complete several steps to make this happen. The following screenshot shows the tags ConfigurationSettings, LocalResources and Startup. Open the ServiceDefinition.csdef file in this repo and copy/paste the three tags into the Web- and WorkerRole tags of the ServiceDefinition.csdef file in your solution. Please be aware that you need to do this for every Role in your Cloud Service.
-![Screenshot of multiple Roles in ServiceDefinition.csdef](images/ServiceDefinition.png)
+We need to complete several steps to make this happen. Please copy/paste the tags ConfigurationSettings, LocalResources and Startup from the code snippets below into the Web- and WorkerRole tags of the ServiceDefinition.csdef file in your solution. Please be aware that you need to do this for every Role in your Cloud Service.
+The screenshot below the snippets shows how your ServiceDefinition.csdef file could look like after making the changes.
+
 {code}
 <ConfigurationSettings>
   <Setting name="Dynatrace.EnvironmentId" />
@@ -65,6 +66,8 @@ We need to complete several steps to make this happen. The following screenshot 
   </Task>
 </Startup>
 {code}
+
+![Screenshot of ServiceDefinition.csdef](images/ServiceDefinition.png)
 
 When you're using VisualStudio, you'll recognize a Warning in your Solution Explorer. This is because we defined two mandatory parameters for the Dynatrace OneAgent (EnvironmentID and Token), which still need to be applied to all your Cloud Service configuration files (*.cscfg).
 ![Screenshot of warning in Solution Explorer](images/Warning.png)
