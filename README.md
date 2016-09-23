@@ -12,7 +12,7 @@ This file will guide you through the process of gathering any mandadory paramete
 Your credentials
 ----------------
 First, please gather your Dynatrace credentials from the Dynatrace dashboard. This is required for allowing the Dynatrace OneAgent to connect to your Dynatrace environment.
-![Screenshot of EnvironmentID and Token]()
+![Screenshot of EnvironmentID and Token](images/deploy.png)
 
 Please make sure you have that information available later.
 
