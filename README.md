@@ -5,8 +5,8 @@ Dynatrace is a full-stack application monitoring solution that covers your entir
 
 Monitoring Azure Cloud-Services
 -------------------------------
-Azure Cloud-Services gives you the option of deploying and auto scaling applications and services.
-By modifying the .csdef file of your Cloud Service, you can easily install the Dynatrace OneAgent as part of your deployment.
+Azure Cloud-Services allows you to easily scale applications.
+By modifying the .csdef file of your Cloud Service, you can easily trigger installation of the Dynatrace OneAgent as part of your regular deployment.
 
 First, please gather your Dynatrace credentials from the Dynatrace dashboard. This is required for allowing the Dynatrace OneAgent to connect to your Dynatrace environment.
 ![Screenshot of EnvironmentID and Token]()
